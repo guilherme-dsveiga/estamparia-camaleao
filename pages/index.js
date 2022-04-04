@@ -4,7 +4,7 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProductBanner from "../components/ProductBanner";
-import { products } from "../lib/products";
+import { productsBanner } from "../lib/productsBanner";
 
 export default function Home() {
   return (
@@ -16,23 +16,25 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="w-full min-h-[450px] bg-gray-100 mt-20 flex items-center justify-between px-14">
-          <div>
-            <h1 className="text-main-purple text-3xl font-bold mb-2">
-              Voce tem a ideia, nós cuidamos das cores!
-            </h1>
-            <p className="text-lg font-medium mb-2">
-              Produtos personalizados para você,
-              <br />
-              sua empresa, seu evento, sua marca e muito mais!
-            </p>
-            <button className="px-12 py-1 bg-main-purple rounded-md text-white text-lg">
-              Faça um orçamento
-            </button>
+        <div className="w-full min-h-[650px] bg-gray-100 flex justify-center">
+          <div className="flex items-center justify-between px-14 w-full max-w-[1400px]">
+            <div>
+              <h1 className="text-main-purple text-3xl font-bold mb-2">
+                Voce tem a ideia, nós cuidamos das cores!
+              </h1>
+              <p className="text-lg font-medium mb-2">
+                Produtos personalizados para você,
+                <br />
+                sua empresa, seu evento, sua marca e muito mais!
+              </p>
+              <button className="px-12 py-1 bg-main-purple rounded-md text-white text-lg">
+                Faça um orçamento
+              </button>
+            </div>
+            <div className="w-[425px] h-[350px] bg-gray-400 flex items-end"></div>
           </div>
-          <div className="w-[425px] h-[350px] bg-gray-400 flex items-end"></div>
         </div>
-        <div className="my-20 flex gap-2 justify-center items-center">
+        <div className="my-20 flex gap-2 justify-center items-center max-w-[1400px] mx-auto">
           <div className="basis-full">
             <img
               src="./assets/camaleao-home.png"
@@ -80,18 +82,79 @@ export default function Home() {
             Como comprar?
           </h2>
           <div className="flex justify-center items-center gap-5">
-            <div className="w-[145px] h-[145px] bg-gray-400"></div>
-            <i className="bi bi-arrow-right text-5xl"></i>
-            <div className="w-[145px] h-[145px] bg-gray-400"></div>
-            <i className="bi bi-arrow-right text-5xl"></i>
-            <div className="w-[145px] h-[145px] bg-gray-400"></div>
-            <i className="bi bi-arrow-right text-5xl"></i>
-            <div className="w-[145px] h-[145px] bg-gray-400"></div>
-            <i className="bi bi-arrow-right text-5xl"></i>
-            <div className="w-[145px] h-[145px] bg-gray-400"></div>
+            <div className="relative">
+              <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
+                <img
+                  src="./assets/shirt-icon.svg"
+                  alt="Icone de camiseta"
+                ></img>
+              </div>
+              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+                Escolha o modelo
+                <br /> e a cor da camiseta
+              </p>
+            </div>
+
+            <i className="bi bi-arrow-right text-4xl"></i>
+
+            <div className="relative">
+              <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
+                <img
+                  src="./assets/art-icon.svg"
+                  alt="Icone de paleta de tinta"
+                ></img>
+              </div>
+              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+                Envie a imagem
+                <br /> a ser estampada
+              </p>
+            </div>
+
+            <i className="bi bi-arrow-right text-4xl"></i>
+
+            <div className="relative">
+              <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
+                <img
+                  src="./assets/resize-icon.svg"
+                  alt="Icone de aumentar/diminuir imagem"
+                ></img>
+              </div>
+              <p className="text-center text-main-lime-green font-bold absolute bottom-[-80px] left-0 right-0 mx-auto">
+                Escolha
+                <br /> o posicionamento
+                <br /> da imagem
+              </p>
+            </div>
+
+            <i className="bi bi-arrow-right text-4xl"></i>
+
+            <div className="relative">
+              <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
+                <img src="./assets/coins-icon.svg" alt="Icone de moedas"></img>
+              </div>
+              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+                Defina a
+                <br /> quantidade
+              </p>
+            </div>
+
+            <i className="bi bi-arrow-right text-4xl"></i>
+
+            <div className="relative">
+              <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400 flex justify-center items-center">
+                <img
+                  src="./assets/happy-icon.svg"
+                  alt="Icone de pessoa feliz"
+                ></img>
+              </div>
+              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+                Agora é só
+                <br /> aproveitar!
+              </p>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center px-20">
+        <div className="flex flex-col justify-center items-center px-20 pt-20">
           <h2 className="text-main-purple font-bold text-[40px] mb-10">
             Perguntas Frequêntes
           </h2>
@@ -133,11 +196,11 @@ export default function Home() {
           </div>
         </div>
         <div className="flex gap-14 justify-center items-center my-20">
-          <div className="w-[372px] h-[372px] bg-gray-400 text-[40px] text-white flex justify-center items-center">
-            sem pedido mínimo
+          <div className="w-[372px] h-[372px] bg-[url(/assets/resting-men.png)] inside-container-text-shadow text-center font-extrabold shadow-lg shadow-zinc-400 text-[40px] text-white flex justify-center items-center">
+            SEM PEDIDO MÍNIMO
           </div>
-          <div className="w-[372px] h-[372px] bg-gray-400 text-[40px] text-white flex justify-center items-center">
-            Impressão DTG
+          <div className="w-[372px] h-[372px] bg-[url(/assets/printer.png)] text-[40px] inside-container-text-shadow font-extrabold shadow-lg shadow-zinc-400 text-white flex justify-center items-center">
+            IMPRESSÃO DTG
           </div>
         </div>
         <div>
@@ -147,7 +210,7 @@ export default function Home() {
           <div className="w-full h-[450px] bg-gray-400"></div>
         </div>
         <div>
-          {products.map((item, key) => (
+          {productsBanner.map((item, key) => (
             <ProductBanner props={item} key={key} />
           ))}
         </div>

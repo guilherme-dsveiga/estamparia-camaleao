@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "main-purple": "#9e3281",
+        "main-lime-green": "#77cc42",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
