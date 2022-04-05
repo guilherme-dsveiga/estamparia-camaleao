@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
@@ -7,6 +8,18 @@ import ProductBanner from "../components/ProductBanner";
 import { productsBanner } from "../lib/productsBanner";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1100) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    });
+  }, []);
+
   return (
     <div className="font-roboto">
       <Head>
@@ -16,7 +29,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="w-full min-h-[650px] bg-gray-100 flex justify-center">
+        <div className="w-full min-h-[550px] bg-gray-100 flex justify-center relative">
           <div className="flex items-center justify-between px-14 w-full max-w-[1400px]">
             <div>
               <h1 className="text-main-purple text-3xl font-bold mb-2">
@@ -31,10 +44,16 @@ export default function Home() {
                 Faça um orçamento
               </button>
             </div>
-            <div className="w-[425px] h-[350px] bg-gray-400 flex items-end"></div>
+            <div className="absolute bottom-0 right-0">
+              <img
+                className="hidden reg:block md:w-[530px]"
+                src="./assets/pessoas-banner-home.png"
+                alt="Pessoas com camisetas"
+              ></img>
+            </div>
           </div>
         </div>
-        <div className="my-20 flex gap-2 justify-center items-center max-w-[1400px] mx-auto">
+        <div className="my-20 flex gap-5 md:gap-2 flex-col md:flex-row md:px-0 px-5   justify-center items-center max-w-[1400px] mx-auto">
           <div className="basis-full">
             <img
               src="./assets/camaleao-home.png"
@@ -81,7 +100,7 @@ export default function Home() {
           <h2 className="text-[40px] text-main-purple font-bold mb-10">
             Como comprar?
           </h2>
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center reg:gap-5 flex-col reg:flex-row">
             <div className="relative">
               <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
                 <img
@@ -89,13 +108,17 @@ export default function Home() {
                   alt="Icone de camiseta"
                 ></img>
               </div>
-              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+              <p className="text-center text-main-lime-green font-bold my-4 reg:my-0 reg:absolute reg:bottom-[-80px] reg:left-0 reg:right-0 reg:mx-auto">
                 Escolha o modelo
                 <br /> e a cor da camiseta
               </p>
             </div>
 
-            <i className="bi bi-arrow-right text-4xl"></i>
+            {isMobile ? (
+              <i className="bi bi-arrow-right text-4xl"></i>
+            ) : (
+              <i className="bi bi-arrow-down text-4xl mb-5"></i>
+            )}
 
             <div className="relative">
               <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
@@ -104,13 +127,17 @@ export default function Home() {
                   alt="Icone de paleta de tinta"
                 ></img>
               </div>
-              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+              <p className="text-center text-main-lime-green font-bold my-4 reg:my-0 reg:absolute reg:bottom-[-80px] reg:left-0 reg:right-0 reg:mx-auto">
                 Envie a imagem
                 <br /> a ser estampada
               </p>
             </div>
 
-            <i className="bi bi-arrow-right text-4xl"></i>
+            {isMobile ? (
+              <i className="bi bi-arrow-right text-4xl"></i>
+            ) : (
+              <i className="bi bi-arrow-down text-4xl mb-5"></i>
+            )}
 
             <div className="relative">
               <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
@@ -119,26 +146,34 @@ export default function Home() {
                   alt="Icone de aumentar/diminuir imagem"
                 ></img>
               </div>
-              <p className="text-center text-main-lime-green font-bold absolute bottom-[-80px] left-0 right-0 mx-auto">
+              <p className="text-center text-main-lime-green font-bold my-4 reg:my-0 reg:absolute reg:bottom-[-80px] reg:left-0 reg:right-0 reg:mx-auto">
                 Escolha
                 <br /> o posicionamento
                 <br /> da imagem
               </p>
             </div>
 
-            <i className="bi bi-arrow-right text-4xl"></i>
+            {isMobile ? (
+              <i className="bi bi-arrow-right text-4xl"></i>
+            ) : (
+              <i className="bi bi-arrow-down text-4xl mb-5"></i>
+            )}
 
             <div className="relative">
               <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400  flex justify-center items-center">
                 <img src="./assets/coins-icon.svg" alt="Icone de moedas"></img>
               </div>
-              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+              <p className="text-center text-main-lime-green font-bold my-4 reg:my-0 reg:absolute reg:bottom-[-80px] reg:left-0 reg:right-0 reg:mx-auto">
                 Defina a
                 <br /> quantidade
               </p>
             </div>
 
-            <i className="bi bi-arrow-right text-4xl"></i>
+            {isMobile ? (
+              <i className="bi bi-arrow-right text-4xl"></i>
+            ) : (
+              <i className="bi bi-arrow-down text-4xl mb-5"></i>
+            )}
 
             <div className="relative">
               <div className="w-[145px] h-[145px] bg-main-lime-green rounded-2xl shadow-lg shadow-zinc-400 flex justify-center items-center">
@@ -147,41 +182,69 @@ export default function Home() {
                   alt="Icone de pessoa feliz"
                 ></img>
               </div>
-              <p className="text-center text-main-lime-green font-bold absolute bottom-[-60px] left-0 right-0 mx-auto">
+              <p className="text-center text-main-lime-green font-bold my-4 reg:my-0 reg:absolute reg:bottom-[-80px] reg:left-0 reg:right-0 reg:mx-auto">
                 Agora é só
                 <br /> aproveitar!
               </p>
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center px-20 pt-20">
-          <h2 className="text-main-purple font-bold text-[40px] mb-10">
-            Perguntas Frequêntes
+        <div className="flex flex-col justify-center items-center px-5 md:px-20 pt-20">
+          <h2 className="text-main-purple font-bold text-[40px] mb-10 text-center">
+            Perguntas Frequentes
           </h2>
-          <div className="flex gap-14 max-w-5xl">
+          <div className="flex gap-14 md:flex-row flex-col max-w-none md:max-w-4xl">
             <ul className="flex flex-col gap-10 text-sm text-center">
-              <li>
-                <h4>Existe alguma quantidade minima?</h4>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Existe alguma quantidade minima?
+                </h4>
                 <p>Não! O pedido mínimo para produção é de uma unidade</p>
               </li>
-              <li>
-                <h4>Posso levar minha camisetas para estampar?</h4>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Posso levar minha camisetas para estampar?
+                </h4>
                 <p>
                   Sim, sua camiseta sendo feita de algodão nós conseguimos
                   estampar.
                 </p>
               </li>
-              <li>
-                <h4>Posso estampar qualquer imagem na camiseta?</h4>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Posso estampar qualquer imagem na camiseta?
+                </h4>
                 <p>
                   Sim, é possível estampar qualquer imagem desde que tendo
                   qualidade e tamanho para impressão.
                 </p>
               </li>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Como faço para fazer um orçamento?
+                </h4>
+                <p>
+                  Para fazer um orçamento é muito simples, é preciso apenas
+                  enviar a quantidade e modelo das camisetas, além da estampa e
+                  posicionamento da estampa na camiseta.
+                </p>
+              </li>
             </ul>
             <ul className="flex flex-col gap-10 text-sm text-center">
-              <li>
-                <h4>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Vocês enviam para todo Brasil?
+                </h4>
+                <p>Sim! Podemos enviar seu pedido para todo Brasil.</p>
+              </li>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
+                  Como envio meu logotipo?
+                </h4>
+                <p>É possível enviar por e-mail ou por WhatsApp</p>
+              </li>
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
                   Posso comprar camisetas de cores diferentes para minha
                   empresa?
                 </h4>
@@ -190,12 +253,9 @@ export default function Home() {
                   variar entre elas em seu pedido.
                 </p>
               </li>
-              <li>
-                <h4>Vocês enviam para todo Brasil?</h4>
-                <p>Sim! Podemos enviar seu pedido para todo Brasil.</p>
-              </li>
-              <li>
-                <h4>
+
+              <li className="basis-full">
+                <h4 className="text-lg font-bold text-main-purple mb-1">
                   Tenho uma ideia de estampa mas não consigo desenhar, vocês
                   conseguem me ajudar?
                 </h4>
@@ -207,7 +267,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="flex gap-14 justify-center items-center my-20">
+        <div className="flex gap-14 md:flex-row flex-col justify-center items-center my-20">
           <div className="w-[372px] h-[372px] bg-[url(/assets/resting-men.png)] inside-container-text-shadow text-center font-extrabold shadow-lg shadow-zinc-400 text-[40px] text-white flex justify-center items-center">
             SEM PEDIDO MÍNIMO
           </div>
