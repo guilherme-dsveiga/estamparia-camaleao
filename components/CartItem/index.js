@@ -4,14 +4,14 @@ import React from "react";
 const CartItem = ({ key, img, alt, title, paragraph, sizes, colors }) => {
   return (
     <div key={key} className="flex max-w-6xl mx-auto gap-10">
-      <div className="p-2 shadow-lg shadow-zinc-200">
-        <img src={img} alt={alt}></img>
+      <div className=" shadow-lg shadow-zinc-200">
+        <img className="w-full h-full object-cover" src={img} alt={alt}></img>
       </div>
       <div className="max-w-lg">
         <h3 className="font-extrabold text-main-purple text-2xl">{title}</h3>
         <p className="font-semibold mb-3">{paragraph}</p>
         <small>TAMANHOS DISPONIVEIS:</small>
-        <div className="flex gap-1 text-main-purple font-bold text-xl leading-4 mb-3">
+        <div className="flex gap-[10px] text-main-purple font-bold text-xl leading-4 mb-3">
           {sizes.map((s, key) => (
             <div key={key}>{s}</div>
           ))}

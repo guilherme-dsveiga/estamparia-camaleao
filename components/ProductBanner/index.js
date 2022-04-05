@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const ProductBanner = ({ props, key }) => {
+  const [isMobile, setIsMobile] = useState(false);
   return (
     <div
-      className={`flex w-full justify-center items-center gap-10 my-20 px-14`}
+      className={`flex w-full justify-center items-center min-h-[350px] md:min-h-[400px]  gap-10 my-20 px-14 relative`}
       key={key}
       style={{ backgroundColor: props.bgColor }}
     >
-      <div>
-        <div className="w-[350px] h-[450px] bg-slate-500"></div>
-      </div>
-      <div className="text-center">
+      <div className="text-center max-w-md">
         <h4 className="text-white text-2xl font-bold mb-3">{props.title}</h4>
         <p className="text-sm mb-3">{props.paragraph}</p>
         <button className="text-sm uppercase rounded-2xl px-8 py-3 bg-white">
           {props.buttonText}
         </button>
       </div>
-      <div>
-        <div className="w-[350px] h-[450px] bg-slate-500"></div>
-      </div>
+      {props.imgs.map((i, k) => (
+        <div
+          key={k}
+          className={`absolute ${
+            k % 2 === 0
+              ? "bottom-0 left-2 xl:left-44"
+              : "bottom-0 right-2 xl:right-44"
+          }`}
+        >
+          <img src={i}></img>
+        </div>
+      ))}
     </div>
   );
 };

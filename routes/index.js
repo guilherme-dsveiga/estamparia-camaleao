@@ -10,6 +10,10 @@ export const Routes = [
     route: "/products",
   },
   {
+    label: "Catalogo",
+    route: "/catalogue",
+  },
+  {
     label: "Quem Somos?",
     route: "/about",
   },

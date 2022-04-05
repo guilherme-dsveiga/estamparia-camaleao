@@ -1,13 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes } from "../../routes";
 import SearchBar from "../SearchBar";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 1100) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    });
+  }, []);
+
   return (
     <div className="shadow-md">
-      <header className="flex justify-between bg-main-purple pr-7 text-white text-lg ">
+      <header
+        className={`flex ${
+          isMobile ? "justify-center" : "justify-between pr-7"
+        } bg-main-purple  text-white text-lg `}
+      >
         <div className="flex items-center">
           <div className="w-80 p-3 bg-white">
             <img
@@ -15,19 +31,23 @@ const Header = () => {
               alt="Logo da Estamparia Camaleão"
             ></img>
           </div>
-          <nav className="flex justify-center items-center">
-            <ul className="flex">
-              {Routes.map((r, k) => (
-                <li key={k} className={`${k === 0 ? "ml-10" : null} mr-10`}>
-                  <Link href={r.route}>{r.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {!isMobile ? (
+            <nav className="flex justify-center items-center">
+              <ul className="flex">
+                {Routes.map((r, k) => (
+                  <li key={k} className={`${k === 0 ? "ml-10" : null} mr-10`}>
+                    <Link href={r.route}>{r.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </div>
-        <div className="flex justify-center items-center">
-          <SearchBar />
-        </div>
+        {!isMobile ? (
+          <div className="flex justify-center items-center">
+            <SearchBar />
+          </div>
+        ) : null}
       </header>
     </div>
   );

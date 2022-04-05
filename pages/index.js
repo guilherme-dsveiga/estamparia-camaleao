@@ -161,36 +161,48 @@ export default function Home() {
           <div className="flex gap-14 max-w-5xl">
             <ul className="flex flex-col gap-10 text-sm text-center">
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>Existe alguma quantidade minima?</h4>
+                <p>Não! O pedido mínimo para produção é de uma unidade</p>
               </li>
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>Posso levar minha camisetas para estampar?</h4>
+                <p>
+                  Sim, sua camiseta sendo feita de algodão nós conseguimos
+                  estampar.
+                </p>
               </li>
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>Posso estampar qualquer imagem na camiseta?</h4>
+                <p>
+                  Sim, é possível estampar qualquer imagem desde que tendo
+                  qualidade e tamanho para impressão.
+                </p>
               </li>
             </ul>
             <ul className="flex flex-col gap-10 text-sm text-center">
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>
+                  Posso comprar camisetas de cores diferentes para minha
+                  empresa?
+                </h4>
+                <p>
+                  Sim! Você pode escolher cores diferentes de nosso catálogo e
+                  variar entre elas em seu pedido.
+                </p>
               </li>
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>Vocês enviam para todo Brasil?</h4>
+                <p>Sim! Podemos enviar seu pedido para todo Brasil.</p>
               </li>
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation
+                <h4>
+                  Tenho uma ideia de estampa mas não consigo desenhar, vocês
+                  conseguem me ajudar?
+                </h4>
+                <p>
+                  Sim! Temos uma equipe de ilustradores aptos a ajudar a tirar
+                  sua ideia do papel e virar uma camiseta incrível.
+                </p>
               </li>
             </ul>
           </div>
@@ -208,11 +220,6 @@ export default function Home() {
             Faça um orçamento
           </h2>
           <div className="w-full h-[450px] bg-gray-400"></div>
-        </div>
-        <div>
-          {productsBanner.map((item, key) => (
-            <ProductBanner props={item} key={key} />
-          ))}
         </div>
       </main>
 
