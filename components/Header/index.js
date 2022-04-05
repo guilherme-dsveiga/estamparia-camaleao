@@ -35,7 +35,10 @@ const Header = () => {
             <nav className="flex justify-center items-center">
               <ul className="flex">
                 {Routes.map((r, k) => (
-                  <li key={k} className={`${k === 0 ? "ml-10" : null} mr-10`}>
+                  <li
+                    key={k}
+                    className={`${k === 0 ? "ml-10" : null} mr-10 text-center`}
+                  >
                     <Link href={r.route}>{r.label}</Link>
                   </li>
                 ))}
