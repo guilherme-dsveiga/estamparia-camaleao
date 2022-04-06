@@ -18,6 +18,12 @@ export default function Document() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         />
+        <script
+          defer
+          src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+          integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <body>
         <Main />
