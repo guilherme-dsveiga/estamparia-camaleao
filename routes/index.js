@@ -13,12 +13,4 @@ export const Routes = [
     label: "Catalogo",
     route: "/catalogue",
   },
-  {
-    label: "Quem Somos?",
-    route: "/about",
-  },
-  {
-    label: "Contato",
-    route: "/contact",
-  },
 ];

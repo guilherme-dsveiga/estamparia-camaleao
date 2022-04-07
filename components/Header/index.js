@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth < 1100) {
+      if (window.innerWidth < 768) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -24,7 +24,7 @@ const Header = () => {
           isMobile ? "justify-center" : "justify-between pr-7"
         } bg-main-purple  text-white text-lg `}
       >
-        <div className="flex items-center">
+        <div className="flex items-center w-full justify-between">
           <div className="w-80 p-3 bg-white">
             <img
               src="./assets/camaleao-logo.png"
@@ -32,7 +32,7 @@ const Header = () => {
             ></img>
           </div>
           {!isMobile ? (
-            <nav className="flex justify-center items-center">
+            <nav className="flex justify-center items-center w-full">
               <ul className="flex">
                 {Routes.map((r, k) => (
                   <li
@@ -46,11 +46,6 @@ const Header = () => {
             </nav>
           ) : null}
         </div>
-        {!isMobile ? (
-          <div className="flex justify-center items-center">
-            <SearchBar />
-          </div>
-        ) : null}
       </header>
     </div>
   );

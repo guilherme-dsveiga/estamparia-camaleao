@@ -17,26 +17,26 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <div className="w-full min-h-[550px] bg-gray-100 flex justify-center relative">
+        <div className="w-full min-h-[384px] flex justify-center relative">
           <div className="flex items-center justify-between px-14 w-full max-w-[1400px]">
-            <div>
-              <h1 className="text-main-purple text-3xl font-bold mb-2">
+            <div className="md:w-1/2 flex justify-center items-center md:block flex-col">
+              <h1 className="text-main-purple text-3xl font-bold mb-2 text-center md:text-left">
                 Voce tem a ideia, nós cuidamos das cores!
               </h1>
-              <p className="text-lg font-medium mb-2">
+              <p className="text-lg font-medium mb-2 text-center md:text-left">
                 Produtos personalizados para você,
                 <br />
                 sua empresa, seu evento, sua marca e muito mais!
               </p>
-              <button className="px-12 py-1 bg-main-purple rounded-md text-white text-lg">
+              <button className="px-12 py-1 bg-main-purple rounded-md text-white text-lg text-center md:text-left">
                 Faça um orçamento
               </button>
             </div>
-            <div className="absolute bottom-0 right-0">
+            <div className="absolute bottom-0 right-0 -z-10 hidden md:block">
               <img
-                className="hidden reg:block md:w-[530px]"
-                src="./assets/pessoas-banner-home.png"
-                alt="Pessoas com camisetas"
+                className="h-full"
+                src="./assets/home-banner.png"
+                alt="Camiseta"
               ></img>
             </div>
           </div>
@@ -241,12 +241,12 @@ export default function Home() {
             IMPRESSÃO DTG
           </div>
         </div>
-        <div>
+        {/*(<div>
           <h2 className="text-main-purple font-bold text-[40px] mb-10 text-center">
             Faça um orçamento
           </h2>
           <div className="w-full h-[450px] bg-gray-400"></div>
-        </div>
+        </div>*/}
       </main>
 
       <Footer />
