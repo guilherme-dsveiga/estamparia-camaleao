@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { goTo } from "../../hooks";
 
 const ProductBanner = ({ props, key }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,7 +12,10 @@ const ProductBanner = ({ props, key }) => {
       <div className="text-center max-w-md">
         <h4 className="text-white text-2xl font-bold mb-3">{props.title}</h4>
         <p className="text-sm mb-3">{props.paragraph}</p>
-        <button className="text-sm uppercase rounded-2xl px-8 py-3 bg-white">
+        <button
+          className="text-sm uppercase rounded-2xl px-8 py-3 bg-white"
+          onClick={() => goTo("http://wa.me/5513991176391")}
+        >
           {props.buttonText}
         </button>
       </div>

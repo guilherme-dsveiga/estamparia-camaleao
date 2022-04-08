@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProductBanner from "../components/ProductBanner";
 import { productsBanner } from "../lib/productsBanner";
+import { goTo } from "../hooks";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className="relative">
         <div className="w-full min-h-[384px] flex justify-center relative">
           <div className="flex items-center justify-between px-14 w-full max-w-[1400px]">
             <div className="md:w-1/2 flex justify-center items-center md:block flex-col">
@@ -39,9 +40,16 @@ export default function Home() {
                 alt="Camiseta"
               ></img>
             </div>
+            <div className="absolute bottom-0  left-0 -z-10 opacity-25 w-[330px] hidden md:block">
+              <img
+                className="w-full"
+                src="./assets/camaleao-solo.png"
+                alt="Camaleão"
+              ></img>
+            </div>
           </div>
         </div>
-        <div className="my-20 flex gap-5 md:gap-2 flex-col md:flex-row md:px-0 px-5   justify-center items-center max-w-[1400px] mx-auto">
+        <div className="py-5 md:py-20 flex gap-5 md:gap-2 flex-col md:flex-row md:px-0 px-5   justify-center items-center max-w-[1400px] mx-auto">
           <div className="basis-full">
             <img
               src="./assets/camaleao-home.png"
@@ -247,6 +255,14 @@ export default function Home() {
           </h2>
           <div className="w-full h-[450px] bg-gray-400"></div>
         </div>*/}
+        <div className="fixed right-5 bottom-5 w-14 cursor-pointer hidden md:block">
+          <img
+            className="w-full"
+            src="./assets/whatsapp-floating-icon.png"
+            alt="Icone do Whatsapp"
+            onClick={() => goTo("http://wa.me/5513991176391")}
+          ></img>
+        </div>
       </main>
 
       <Footer />

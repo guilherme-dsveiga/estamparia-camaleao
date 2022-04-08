@@ -33,12 +33,9 @@ const Header = () => {
           </div>
           {!isMobile ? (
             <nav className="flex justify-center items-center w-full">
-              <ul className="flex">
+              <ul className="flex justify-evenly w-3/4">
                 {Routes.map((r, k) => (
-                  <li
-                    key={k}
-                    className={`${k === 0 ? "ml-10" : null} mr-10 text-center`}
-                  >
+                  <li key={k}>
                     <Link href={r.route}>{r.label}</Link>
                   </li>
                 ))}

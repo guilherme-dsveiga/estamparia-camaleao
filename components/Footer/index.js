@@ -1,12 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Routes } from "../../routes";
+import { goTo } from "../../hooks";
 
 const Footer = () => {
-  const goTo = (url) => {
-    document.location.href = url;
-  };
-
   return (
     <footer className="bg-main-purple px-20 py-8 text-white">
       <nav className="flex lg:w-[60%] items-center  md:pb-14">
