@@ -20,14 +20,15 @@ function Catalogue() {
             Catálogo de <br></br>Produtos
           </div>
           <div className="hidden lg:block absolute bottom-14 left-24 text-4xl 2xl:text-5xl -rotate-[6deg]">
-            <p className="mb-1">Camisetas personalizadas</p>
+            <p className="mb-1 bg-main-purple bg-opacity-75 ml-10  text-white">
+              Camisetas personalizadas
+            </p>
 
             <p className="bg-red-600 bg-opacity-75 ml-5 mb-2  text-white w-fit">
               para você
             </p>
-            <span className="ml-10">e </span>
-            <span className="bg-cyan-300 bg-opacity-75  text-white">
-              para sua empresa.
+            <span className="bg-cyan-300 bg-opacity-75 ml-10  text-white">
+              e para sua empresa.
             </span>
           </div>
         </div>

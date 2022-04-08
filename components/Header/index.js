@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { goTo } from "../../hooks";
 import { Routes } from "../../routes";
 import SearchBar from "../SearchBar";
 
@@ -25,7 +26,10 @@ const Header = () => {
         } bg-main-purple  text-white text-lg `}
       >
         <div className="flex items-center w-full justify-between">
-          <div className="w-80 p-3 bg-white">
+          <div
+            className="w-80 p-3 bg-white cursor-pointer"
+            onClick={() => goTo("/")}
+          >
             <img
               src="./assets/camaleao-logo.png"
               alt="Logo da Estamparia Camaleão"

@@ -4,8 +4,8 @@ import React from "react";
 const CartItem = ({ id, img, alt, title, paragraph, sizes, colors }) => {
   console.log(id);
   return (
-    <div key={id} className="flex max-w-6xl mx-auto gap-10">
-      <div className=" shadow-lg shadow-zinc-200">
+    <div key={id} className="flex max-w-6xl mx-auto gap-10 px-10">
+      <div className=" shadow-lg shadow-zinc-200 hidden md:block">
         <img className="w-full h-full object-cover" src={img} alt={alt}></img>
       </div>
       <div className="max-w-lg">
@@ -49,7 +49,7 @@ const CartItem = ({ id, img, alt, title, paragraph, sizes, colors }) => {
         )}
 
         <button className="bg-gray-300 px-5 py-3 rounded-xl text-sm">
-          ADICIONAR AO CARRINHO
+          SAIBA MAIS
         </button>
       </div>
     </div>
