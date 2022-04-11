@@ -22,7 +22,7 @@ const ProductBanner = ({ props, key }) => {
       {props.imgs.map((i, k) => (
         <div
           key={k}
-          className={`absolute ${
+          className={`absolute hidden md:block ${
             k % 2 === 0
               ? "bottom-0 left-2 xl:left-44"
               : "bottom-0 right-2 xl:right-44"

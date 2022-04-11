@@ -13,4 +13,8 @@ export const Routes = [
     label: "Catalogo",
     route: "/catalogue",
   },
+  {
+    label: "DTG",
+    route: "/DTG",
+  },
 ];

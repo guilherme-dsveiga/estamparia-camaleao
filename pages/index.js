@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className="relative">
-        <div className="w-full min-h-[384px] flex justify-center relative">
+        <div className="w-full min-h-[384px] flex justify-center relative mt-20">
           <div className="flex items-center justify-between px-14 w-full max-w-[1400px]">
             <div className="md:w-1/2 flex justify-center items-center md:block flex-col">
               <h1 className="text-main-purple text-3xl font-bold mb-2 text-center md:text-left">
