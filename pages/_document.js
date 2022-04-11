@@ -24,6 +24,10 @@ export default function Document() {
           integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
           crossOrigin="anonymous"
         ></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-BBGSN61T36"
+        ></script>
       </Head>
       <body>
         <Main />
